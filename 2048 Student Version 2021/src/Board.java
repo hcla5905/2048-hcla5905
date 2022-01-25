@@ -1,9 +1,9 @@
 import java.util.Random;
 
 public class Board {
- 
+	private int size; 
 	private int[][] board; // holds state of game
-	private Random rnd = new Random(0); // setup random # generator
+	private Random rnd = new Random(); // setup random # generator
 	
 	//What instance variable can you add to keep track of the size or the number of tiles occupied?
 	
@@ -35,6 +35,14 @@ public class Board {
 	// that its parent class has
 	public String toString() {
 		
+		for(int i = 0; i <board.length; i++) {
+			System.out.println();
+			for(int j = 0; j < board[i].length; j++) {
+				String str = String.format("%04d", board[i][j]);
+				
+				System.out.print(str + " "); 
+			}
+		}
 		/*
 		 * Use the String formatter to pad the numbers with leading 0s
 		 * so that the print out does not become jagged
@@ -63,7 +71,7 @@ public class Board {
 	 * inclusive on the 10)
 	 */
 
-	public void populateOne() {
+	public  void populateOne() {
 		
 		// is there an empty spot?
 		// for randomness, generate a row and column
@@ -71,9 +79,21 @@ public class Board {
 		// generate another set of row and column
 		// what happens if the entire board is full??! 
 		
-		
-		
-			
+		int row = rnd.nextInt(board.length); 
+		int col = rnd.nextInt(board.length); 
+        int randomizer = rnd.nextInt(10) + 0; 
+		while(board[row][col] != 0) {
+        	row = rnd.nextInt(board.length); 
+    	    col = rnd.nextInt(board.length); 
+        }
+			if(board[row][col] == 0) {
+				if(randomizer > 90) {
+				board[row][col] = 4;
+				}
+								if(randomizer < 90) {
+									board[row][col] =2; 
+								}
+			}
 
 	}
 
@@ -87,7 +107,33 @@ public class Board {
 	 * [2 8 0 2]->[0 2 8 2]
 	 * [4 0 0 0]->[0 0 0 4]
 	 */
-
+	public void eraseBoard() {
+		boolean check = true; 
+		for(int i = 0; i <board.length; i++) {
+			for(int j = 0; j < board[i].length; j++) {
+			if(board[i][j] == 0) {
+				check = false; 
+				
+			}
+			}
+	
+		
+		}
+		if(check == true) {
+			for(int i = 0; i <board.length; i++) {
+				for(int j = 0; j < board[i].length; j++) {
+				if(board[i][j] == 0) {
+		}
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
 	public void slideRight(int[] row) {
 		
 

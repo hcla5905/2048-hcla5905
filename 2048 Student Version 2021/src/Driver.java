@@ -13,8 +13,7 @@ public class Driver {
 				};
 
 		BoardGUI b = new BoardGUI(data);
-		 System.out.println("ghowhfb");
-		//akvjhelhlhl;blibihbghagbdfvg
+		
 	}
 	
 	
