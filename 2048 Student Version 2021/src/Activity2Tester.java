@@ -8,8 +8,11 @@ public class Activity2Tester {
 		//does it fill a random location? How about if the board is almost
 		//full? Does it still work?
 		b.populateOne();
-		b.eraseBoard(); 
+		System.out.println("hrr");
 		
+		b.eraseBoard(); 
+		System.out.println(b);
+
 		
 	}
 
